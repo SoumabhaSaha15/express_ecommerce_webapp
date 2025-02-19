@@ -1,0 +1,52 @@
+<body>
+  <%- include('./../components/default-navbar.ejs') %>
+    <div class="grid place-items-center bg-base-200 min-h-screen text-base-content" data-aos="fade-up">
+      <div class="hero-content flex-col md:flex-col lg:flex-row">
+        <div class="text-center text-base-content lg:text-left">
+          <h1 class="text-5xl font-bold">Login now!</h1>
+          <p class="py-6">
+            Thought Orbit is a vibrant platform designed to foster creativity, share knowledge, and connect thinkers
+            from all walks of life.
+          </p>
+        </div>
+        <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <form class="card-body" action="/login" method="post">
+
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Email</span>
+              </label>
+              <input type="email" autocomplete="email" placeholder="email" name="email" class="input input-bordered" required />
+            </div>
+
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Password</span>
+              </label>
+              <input type="password" name="password" id="password" name="password" type="password" maxlength="8"
+                minlength="8" placeholder="password" pattern="^[\x21-\x7E]+$" class="input input-bordered"
+                autocomplete="current-password" required />
+              <label class="label cursor-pointer">
+                <span class="label-text">Show Password</span>
+                <input type="checkbox" id="show-password" class="checkbox checkbox-primary" />
+              </label>
+            </div>
+
+            <div class="form-control mt-6">
+              <button class="btn btn-primary">Login</button>
+            </div>
+            <p class="py-8 font-medium">Don't have an account
+              <a href="./signup" class="label-text-alt link link-hover">signup</a>
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+</body>
+<script>
+  document.getElementById('show-password').onclick = () => {
+    const password = document.getElementById('password');
+    password.type = (password.type == "text") ? "password" : "text";
+  }
+</script>

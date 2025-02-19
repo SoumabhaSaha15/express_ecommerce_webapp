@@ -1,0 +1,382 @@
+<div class="w-[80%] max-h-[80dvh] rounded-lg border border-base-300 bg-base-300">
+  <div class="border-b border-base-200 px-3 py-2">
+    <div class="flex flex-wrap items-center">
+      <div class="flex flex-wrap items-center space-x-1 rtl:space-x-reverse">
+
+        <div id="tooltip-bold" role="tooltip" class="tooltip tooltip-bottom tooltip-primary" data-tip="Toggle Bold">
+          <button id="toggleBoldButton" data-tooltip-target="tooltip-bold" type="button" class="btn btn-rounded btn-square">
+            <ion-icon src="/assets/bold.svg" class="text-base-content font-black" size="large"></ion-icon>
+            <span class="sr-only">Bold</span>
+          </button>
+        </div>
+
+        <div id="tooltip-italic" role="tooltip" class="tooltip tooltip-bottom tooltip-primary" data-tip="Toggle italic">
+          <button id="toggleItalicButton" data-tooltip-target="tooltip-italic" type="button" class="btn btn-rounded btn-square">
+            <ion-icon src="/assets/italic.svg" class="text-base-content font-black" size="large"></ion-icon>
+            <span class="sr-only">Italic</span>
+          </button>
+        </div>
+
+        <div id="tooltip-underline" role="tooltip" class="tooltip tooltip-bottom tooltip-primary"
+          data-tip="Toggle underline">
+          <button id="toggleUnderlineButton" data-tooltip-target="tooltip-underline" type="button"
+            class="btn btn-rounded btn-square">
+            <ion-icon src="/assets/underline.svg" class="text-base-content font-black" size="large"></ion-icon>
+            <span class="sr-only">Underline</span>
+          </button>
+        </div>
+
+        <div id="tooltip-strike" role="tooltip" class="tooltip tooltip-bottom tooltip-primary" data-tip="Toggle strike">
+          <button id="toggleStrikeButton" data-tooltip-target="tooltip-strike" type="button" class="btn btn-rounded btn-square">
+            <ion-icon src="/assets/strike.svg" class="text-base-content font-black" size="large"></ion-icon>
+            <span class="sr-only">Strike</span>
+          </button>
+        </div>
+
+        <div id="tooltip-highlight" role="tooltip" class="tooltip tooltip-bottom tooltip-primary"
+          data-tip="Toggle highlight">
+          <button id="toggleHighlightButton" data-tooltip-target="tooltip-highlight" type="button"
+            class="btn btn-rounded btn-square">
+            <ion-icon src="/assets/highlight.svg" class="text-base-content font-black" size="large"></ion-icon>
+            <span class="sr-only">Highlight</span>
+          </button>
+        </div>
+
+        <div id="tooltip-code" role="tooltip" class="tooltip tooltip-bottom tooltip-primary" data-tip="Format code">
+          <button id="toggleCodeButton" type="button" data-tooltip-target="tooltip-code" class="btn btn-rounded btn-square">
+            <ion-icon src="/assets/code.svg" class="text-base-content font-black" size="large"></ion-icon>
+            <span class="sr-only">Code</span>
+          </button>
+        </div>
+
+        <div id="tooltip-link" role="tooltip" class="tooltip tooltip-bottom tooltip-primary" data-tip="Add link">
+          <button id="toggleLinkButton" data-tooltip-target="tooltip-link" type="button" class="btn btn-rounded btn-square">
+            <ion-icon src="/assets/link.svg" class="text-base-content font-black" size="large"></ion-icon>
+            <span class="sr-only">Link</span>
+          </button>
+        </div>
+
+        <div id="tooltip-remove-link" role="tooltip" class="tooltip tooltip-bottom tooltip-primary"
+          data-tip="Remove link">
+          <button id="removeLinkButton" data-tooltip-target="tooltip-remove-link" type="button" class="btn btn-rounded btn-square">
+            <ion-icon src="/assets/remove-link.svg" class="text-base-content font-black" size="large"></ion-icon>
+            <span class="sr-only">Remove link</span>
+          </button>
+        </div>
+
+        <div id="tooltip-text-size" role="tooltip" class="tooltip tooltip-bottom tooltip-primary" data-tip="Text size">
+          <div class="dropdown">
+            <button id="toggleTextSizeButton" data-dropdown-toggle="textSizeDropdown" type="button"
+              data-tooltip-target="tooltip-text-size" class="btn btn-rounded btn-square">
+              <ion-icon src="/assets/text-size.svg" class="text-base-content font-black" size="large"></ion-icon>
+              <span class="sr-only">Text size</span>
+            </button>
+
+            <ul class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow gap-1">
+              <li>
+                <button data-text-size="16px" type="button" class="btn btn-rounded text-base-content">16px</button>
+              </li>
+              <li>
+                <button data-text-size="12px" type="button"
+                  class="btn btn-rounded text-xs text-base-content">12px</button>
+              </li>
+              <li>
+                <button data-text-size="14px" type="button" class="btn btn-rounded text-base-content">14px</button>
+              </li>
+              <li>
+                <button data-text-size="18px" type="button"
+                  class="btn btn-rounded text-lg text-base-content">18px</button>
+              </li>
+              <li>
+                <button data-text-size="24px" type="button"
+                  class="btn btn-rounded text-2xl text-base-content">24px</button>
+              </li>
+              <li>
+                <button data-text-size="36px" type="button"
+                  class="btn btn-rounded text-4xl text-base-content">36px</button>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div id="tooltip-text-color" role="tooltip" class="tooltip tooltip-bottom tooltip-primary"
+          data-tip="Text color">
+          <div class="dropdown">
+            <button id="toggleTextColorButton" data-dropdown-toggle="textColorDropdown" type="button"
+              data-tooltip-target="tooltip-text-color" class="btn btn-rounded btn-square">
+              <ion-icon src="/assets/text-color.svg" class="text-base-content font-black" size="large"></ion-icon>
+              <span class="sr-only">Text color</span>
+            </button>
+            <div id="textColorDropdown" tabindex="0"
+              class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow gap-1">
+              <div class="group mb-3 grid grid-cols-6 items-center gap-2 rounded-lg p-1.5 text-base-content">
+                <input type="color" id="color" value="#e66465" class="col-span-3 h-8 w-full input" />
+                <label for="color" class="col-span-3 text-sm font-medium">Pick
+                  a color</label>
+              </div>
+              <div class="mb-3 grid grid-cols-6 gap-1">
+                <button type="button" data-hex-color="#1A56DB" style="background-color: #1A56DB"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Blue</span></button>
+                <button type="button" data-hex-color="#0E9F6E" style="background-color: #0E9F6E"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Green</span></button>
+                <button type="button" data-hex-color="#FACA15" style="background-color: #FACA15"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Yellow</span></button>
+                <button type="button" data-hex-color="#F05252" style="background-color: #F05252"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Red</span></button>
+                <button type="button" data-hex-color="#FF8A4C" style="background-color: #FF8A4C"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Orange</span></button>
+                <button type="button" data-hex-color="#0694A2" style="background-color: #0694A2"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Teal</span></button>
+                <button type="button" data-hex-color="#B4C6FC" style="background-color: #B4C6FC"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Light indigo</span></button>
+                <button type="button" data-hex-color="#8DA2FB" style="background-color: #8DA2FB"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Indigo</span></button>
+                <button type="button" data-hex-color="#5145CD" style="background-color: #5145CD"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Purple</span></button>
+                <button type="button" data-hex-color="#771D1D" style="background-color: #771D1D"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Brown</span></button>
+                <button type="button" data-hex-color="#FCD9BD" style="background-color: #FCD9BD"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Light orange</span></button>
+                <button type="button" data-hex-color="#99154B" style="background-color: #99154B"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Bordo</span></button>
+                <button type="button" data-hex-color="#7E3AF2" style="background-color: #7E3AF2"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Dark Purple</span></button>
+                <button type="button" data-hex-color="#CABFFD" style="background-color: #CABFFD"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Light</span></button>
+                <button type="button" data-hex-color="#D61F69" style="background-color: #D61F69"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Dark Pink</span></button>
+                <button type="button" data-hex-color="#F8B4D9" style="background-color: #F8B4D9"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Pink</span></button>
+                <button type="button" data-hex-color="#F6C196" style="background-color: #F6C196"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Cream</span></button>
+                <button type="button" data-hex-color="#A4CAFE" style="background-color: #A4CAFE"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Light Blue</span></button>
+                <button type="button" data-hex-color="#5145CD" style="background-color: #5145CD"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Dark Blue</span></button>
+                <button type="button" data-hex-color="#B43403" style="background-color: #B43403"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Orange Brown</span></button>
+                <button type="button" data-hex-color="#FCE96A" style="background-color: #FCE96A"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Light Yellow</span></button>
+                <button type="button" data-hex-color="#1E429F" style="background-color: #1E429F"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Navy Blue</span></button>
+                <button type="button" data-hex-color="#768FFD" style="background-color: #768FFD"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Light Purple</span></button>
+                <button type="button" data-hex-color="#BCF0DA" style="background-color: #BCF0DA"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Light Green</span></button>
+                <button type="button" data-hex-color="#EBF5FF" style="background-color: #EBF5FF"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Sky Blue</span></button>
+                <button type="button" data-hex-color="#16BDCA" style="background-color: #16BDCA"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Cyan</span></button>
+                <button type="button" data-hex-color="#E74694" style="background-color: #E74694"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Pink</span></button>
+                <button type="button" data-hex-color="#83B0ED" style="background-color: #83B0ED"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Darker Sky Blue</span></button>
+                <button type="button" data-hex-color="#03543F" style="background-color: #03543F"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Forest Green</span></button>
+                <button type="button" data-hex-color="#111928" style="background-color: #111928"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Black</span></button>
+                <button type="button" data-hex-color="#4B5563" style="background-color: #4B5563"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Stone</span></button>
+                <button type="button" data-hex-color="#6B7280" style="background-color: #6B7280"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Gray</span></button>
+                <button type="button" data-hex-color="#D1D5DB" style="background-color: #D1D5DB"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Light Gray</span></button>
+                <button type="button" data-hex-color="#F3F4F6" style="background-color: #F3F4F6"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Cloud Gray</span></button>
+                <button type="button" data-hex-color="#F3F4F6" style="background-color: #F3F4F6"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Cloud Gray</span></button>
+                <button type="button" data-hex-color="#F9FAFB" style="background-color: #F9FAFB"
+                  class="btn btn-rounded btn-square btn-xs"><span class="sr-only">Heaven Gray</span></button>
+              </div>
+              <button type="button" id="reset-color" class="btn btn-base">Reset color</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="tooltip-font-family" role="tooltip" class="tooltip tooltip-bottom tooltip-primary"
+          data-tip="Font Family">
+          <div class="dropdown">
+            <button id="toggleFontFamilyButton" data-dropdown-toggle="fontFamilyDropdown" type="button"
+              data-tooltip-target="tooltip-font-family" class="btn btn-rounded btn-square">
+              <ion-icon src="/assets/font-family.svg" class="text-base-content font-black" size="large"></ion-icon>
+              <span class="sr-only">Font family</span>
+            </button>
+            <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow gap-1">
+              <li>
+                <button data-font-family="Inter, ui-sans-serif" type="button" class="btn btn-rounded">Default</button>
+              </li>
+              <li>
+                <button data-font-family="Arial, sans-serif" type="button" class="btn btn-rounded"
+                  style="font-family: Arial, sans-serif;">Arial</button>
+              </li>
+              <li>
+                <button data-font-family="'Courier New', monospace" type="button" class="btn btn-rounded"
+                  style="font-family: 'Courier New', monospace;">Courier New</button>
+              </li>
+              <li>
+                <button data-font-family="Georgia, serif" type="button" class="btn btn-rounded"
+                  style="font-family: Georgia, serif;">Georgia</button>
+              </li>
+              <li>
+                <button data-font-family="'Lucida Sans Unicode', sans-serif" type="button" class="btn btn-rounded"
+                  style="font-family: 'Lucida Sans Unicode', sans-serif;">Lucida Sans Unicode</button>
+              </li>
+              <li>
+                <button data-font-family="Tahoma, sans-serif" type="button" class="btn btn-rounded"
+                  style="font-family: Tahoma, sans-serif;">Tahoma</button>
+              </li>
+              <li>
+                <button data-font-family="'Times New Roman', serif;" type="button" class="btn btn-rounded"
+                  style="font-family: 'Times New Roman', serif;">Times New Roman</button>
+              </li>
+              <li>
+                <button data-font-family="'Trebuchet MS', sans-serif" type="button" class="btn btn-rounded"
+                  style="font-family: 'Trebuchet MS', sans-serif;">Trebuchet MS</button>
+              </li>
+              <li>
+                <button data-font-family="Verdana, sans-serif" type="button" class="btn btn-rounded"
+                  style="font-family: Verdana, sans-serif;">Verdana</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="px-1">
+          <span class="block h-4 w-px bg-gray-300 dark:bg-gray-600"></span>
+        </div>
+
+        <div id="tooltip-left-align" role="tooltip" class="tooltip tooltip-bottom tooltip-primary"
+          data-tip="Align left">
+          <button id="toggleLeftAlignButton" type="button" data-tooltip-target="tooltip-left-align"
+            class="btn btn-rounded btn-square">
+            <ion-icon src="/assets/left-align.svg" class="text-base-content font-black" size="large"></ion-icon>
+            <span class="sr-only">Align left</span>
+          </button>
+        </div>
+
+        <div id="tooltip-center-align" role="tooltip" class="tooltip tooltip-bottom tooltip-primary"
+          data-tip="Align center">
+          <button id="toggleCenterAlignButton" type="button" data-tooltip-target="tooltip-center-align"
+            class="btn btn-rounded btn-square">
+            <ion-icon src="/assets/center-align.svg" class="text-base-content font-black" size="large"></ion-icon>
+            <span class="sr-only">Align center</span>
+          </button>
+        </div>
+
+        <div id="tooltip-right-align" role="tooltip" class="tooltip tooltip-bottom tooltip-primary"
+          data-tip="Align right">
+          <button id="toggleRightAlignButton" type="button" data-tooltip-target="tooltip-right-align"
+            class="btn btn-rounded btn-square">
+            <ion-icon src="/assets/right-align.svg" class="text-base-content font-black" size="large"></ion-icon>
+            <span class="sr-only">Align right</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-2 pt-2">
+      <!-- Heading Dropdown -->
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn m-1">Format</div>
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow gap-1">
+          <li>
+            <button id="toggleParagraphButton" type="button" class="btn btn-rounded">
+              Paragraph
+            </button>
+          </li>
+          <li>
+            <button data-heading-level="1" type="button" class="btn btn-rounded">
+              Heading 1
+            </button>
+          </li>
+          <li>
+            <button data-heading-level="2" type="button" class="btn btn-rounded">
+              Heading 2
+            </button>
+          </li>
+          <li>
+            <button data-heading-level="3" type="button" class="btn btn-rounded">
+              Heading 3
+            </button>
+          </li>
+          <li>
+            <button data-heading-level="4" type="button" class="btn btn-rounded">
+              Heading 4
+            </button>
+          </li>
+          <li>
+            <button data-heading-level="5" type="button" class="btn btn-rounded">
+              Heading 5
+            </button>
+          </li>
+          <li>
+            <button data-heading-level="6" type="button" class="btn btn-rounded">
+              Heading 6
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ps-1.5">
+        <span class="block h-4 w-px"></span>
+      </div>
+
+
+      <div id="tooltip-image" role="tooltip" class="tooltip tooltip-bottom tooltip-primary" data-tip="add image">
+        <button id="addImageButton" type="button" data-tooltip-target="tooltip-image" class="btn btn-rounded btn-square">
+          <ion-icon src="/assets/image.svg" class="text-base-content font-black" size="large"></ion-icon>
+          <span class="sr-only">Add image</span>
+        </button>
+      </div>
+
+      <div id="tooltip-video" role="tooltip" class="tooltip tooltip-bottom tooltip-primary" data-tip="add vedio">
+        <button id="addVideoButton" type="button" data-tooltip-target="tooltip-video" class="btn btn-rounded btn-square">
+          <ion-icon src="/assets/video.svg" class="text-base-content font-black" size="large"></ion-icon>
+          <span class="sr-only">Add video</span>
+        </button>
+      </div>
+
+      <div id="tooltip-list" role="tooltip" class="tooltip tooltip-bottom tooltip-primary" data-tip="Toggle list">
+        <button id="toggleListButton" type="button" data-tooltip-target="tooltip-list" class="btn btn-rounded btn-square">
+          <ion-icon src="/assets/list.svg" class="text-base-content font-black" size="large"></ion-icon>
+          <span class="sr-only">Toggle list</span>
+        </button>
+      </div>
+
+      <div id="tooltip-ordered-list" role="tooltip" class="tooltip tooltip-bottom tooltip-primary"
+        data-tip="Toggle ordered list">
+        <button id="toggleOrderedListButton" type="button" data-tooltip-target="tooltip-ordered-list"
+          class="btn btn-rounded btn-square">
+          <ion-icon src="/assets/ordered-list.svg" class="text-base-content font-black" size="large"></ion-icon>
+          <span class="sr-only">Toggle ordered list</span>
+        </button>
+      </div>
+
+      <div id="tooltip-blockquote-list" role="tooltip" class="tooltip tooltip-bottom tooltip-primary"
+        data-tip="Toggle blockquote">
+        <button id="toggleBlockquoteButton" type="button" data-tooltip-target="tooltip-blockquote-list"
+          class="btn btn-rounded btn-square">
+          <ion-icon src="/assets/blockquote.svg" class="text-base-content font-black" size="large"></ion-icon>
+          <span class="sr-only">Toggle blockquote</span>
+        </button>
+      </div>
+
+      <div id="tooltip-hr-list" role="tooltip" class="tooltip tooltip-bottom tooltip-primary"
+        data-tip="Toggle Horizontal Rule">
+        <button id="toggleHRButton" type="button" data-tooltip-target="tooltip-hr-list" class="btn btn-rounded btn-square">
+          <ion-icon src="/assets/horizontal-rule.svg" class="text-base-content font-black" size="large"></ion-icon>
+          <span class="sr-only">Toggle Horizontal Rule</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <div class="rounded-b-lg px-2 py-2">
+    <label for="wysiwyg-example" class="sr-only">Publish post</label>
+    <div id="wysiwyg-example"
+      class="min-h-[20dvh] max-h-fit rounded-[4px] block w-full border-0  px-0 text-sm  focus:ring-0 text-base-content bg-base-100">
+    </div>
+  </div>
+</div>
