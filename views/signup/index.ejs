@@ -5,14 +5,13 @@
         <div class="text-center text-base-content lg:text-left">
           <h1 class="text-5xl font-bold">Signup now!</h1>
           <p class="py-6">
-            Thought Orbit is a vibrant platform designed to foster creativity, share knowledge, and connect thinkers
-            from all walks of life.
+            HappyDeals.com aims to be your go-to destination for online bargains.  We curate a wide selection of products across various categories, all at discounted prices.
           </p>
         </div>
         <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <form class="card-body" method="POST" action="/signup" enctype="multipart/form-data" name="signup">
 
-            <div class="tooltip tooltip-primary" data-tip="upload dp/avatar">
+            <div class="tooltip tooltip-primary" data-tip="upload dp/avatar/seller-logo">
               <div class="avatar justify-center">
                 <label class="w-24" for="avatar">
                   <img src="assets/upload.svg" class="rounded-full aspect-square border-dashed border-2 bg-base-200"
@@ -51,6 +50,10 @@
               <label class="label cursor-pointer">
                 <span class="label-text">Show Password</span>
                 <input type="checkbox" id="show-password" class="checkbox checkbox-primary" />
+              </label>
+              <label class="label cursor-pointer">
+                <span class="label-text">Seller account</span>                
+                <input type="radio" name="isSeller" class="radio checked:bg-primary"  required/>
               </label>
             </div>
 

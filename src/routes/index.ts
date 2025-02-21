@@ -1,4 +1,4 @@
-import userImage from "./routes/images/index.js";
+import clientImage from "./routes/images/index.js";
 import signup from "./routes/signup/index.js";
 import login from "./routes/login/index.js";
 import test from "./routes/test/index.js";
@@ -12,6 +12,6 @@ router
   .use(signup)
   .use(login)
   .use(test)
-  .use(userImage)
+  .use(clientImage)
   .use(user)
 export default router;

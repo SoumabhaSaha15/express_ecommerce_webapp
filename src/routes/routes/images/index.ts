@@ -1,5 +1,5 @@
 import express from "express";
-import userAvatar from "./userAvatar.js";
+import clientAvatar from "./clientAvatar.js";
 const router = express.Router();
-router.route('/user-avatar/:id').get(userAvatar);
+router.route('/client-avatar/:id').get(clientAvatar);
 export default router;

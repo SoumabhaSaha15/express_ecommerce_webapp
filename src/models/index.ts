@@ -1,2 +1,2 @@
-import { User, UserType, UserModel, UserSchema } from "./User.js";
-export { User, UserType, UserModel, UserSchema };
+import { Client, ClientType, ClientSchema, ClientModel } from "./Client.js";
+export { Client, ClientType, ClientSchema, ClientModel }

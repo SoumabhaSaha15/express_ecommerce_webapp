@@ -1,11 +1,11 @@
 import fs from "fs/promises";
 import express from "express";
-import { UserModel } from "./../../../models/index.js";
+import { ClientModel } from "../../../models/index.js";
 
 export default async (req: express.Request, res: express.Response) => {
   try {
     const [id, extension] = req.params['id'].split("."), validExt = ["jpg", "jpeg", "png"];
-    const user = await UserModel.findById(id).select({ avatar: true }).lean();
+    const user = await ClientModel.findById(id).select({ avatar: true }).lean();
     if (user?.avatar == null) throw new Error('User Not found!!!');
     else if (!validExt.includes(extension)) throw new Error('Invalid extension!!!');
     else {

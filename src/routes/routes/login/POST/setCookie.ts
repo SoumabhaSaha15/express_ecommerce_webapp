@@ -8,6 +8,10 @@ export default async (req: express.Request, res: express.Response, next: express
       httpOnly: true,
       expires: TenYearsFromNow,
     });
+    res.cookie('isSeller', jwt.sign({ id: req.body?.isSeller }, process.env.JWT_KEY), {
+      httpOnly: true,
+      expires: TenYearsFromNow,
+    });
     next();
   } catch (err) {
     next(err);

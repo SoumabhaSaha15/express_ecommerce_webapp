@@ -1,5 +1,5 @@
 import express from "express";
-import { User } from "../../../../models/index.js";
+import { Client } from "../../../../models/index.js";
 import zodError from "../../../../middleware/zod-error.js";
-const loginParser = User.omit({ name: true, avatar: true });
+const loginParser = Client.pick({ password:true,email:true });
 export default zodError(loginParser);
