@@ -8,6 +8,14 @@
     <a class="btn btn-ghost text-xl">Thought Orbit.IO</a>
   </div>
   <div class="flex-none">
+    <button class="btn btn-circle aspect-square">
+      <label class="swap swap-rotate aspect-square h-[100%]">
+        <!-- this hidden checkbox controls the state -->
+        <input type="checkbox" class="hidden theme-controller" value="synthwave" onclick="toggleTheme()" />
+        <ion-icon src="/assets/sun.svg" class="swap-off text-base-content" size="large" style="scale:1"></ion-icon>
+        <ion-icon src="/assets/moon.svg" class="swap-on text-base-content" size="large" style="scale:1"></ion-icon>
+      </label>
+    </button>
     <div class="dropdown dropdown-end">
       <button class="btn btn-square btn-ghost">
         <div class="avatar">

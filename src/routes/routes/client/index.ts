@@ -1,5 +1,5 @@
-import error_handler from "./../user/error.js";
-import invalidParam from "./../user/POST/invalidParam.js";
+import error_handler from "./error.js";
+import invalidParam from "./POST/invalidParam.js";
 import express from "express";
 const router = express.Router();
 router

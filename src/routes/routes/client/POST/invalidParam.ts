@@ -5,7 +5,7 @@ export default async (req: express.Request, res: express.Response, next: express
     const id = req.params['id'];
     const user = await ClientModel.findById(id).select(['avatar', 'name', 'email']);
     if(!user) throw new Error('User not found');
-    else res.render('user/index',{...user.toJSON()});
+    else res.render('client/index',{...user.toJSON()});
   }catch(e){
     next(e);
   }
