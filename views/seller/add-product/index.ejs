@@ -1,0 +1,72 @@
+<template>
+  <img class="object-cover object-center  aspect-square rounded-lg" alt="gallery-photo" />
+</template>
+<style>
+  img.product {
+    width: 200px;
+    height: 200px;
+  }
+</style>
+<div class="grid place-items-center bg-base-200 min-h-screen text-base-content w-full" id="user-signup"
+  data-aos="fade-up">
+  <div class="hero-content flex-col md:flex-col lg:flex-row-reverse">
+
+    <div class="text-center text-base-content lg:text-left min-h-20">
+
+      <div id="productGallery"
+        class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 bg-no-repeat bg-contain bg-center min-h-20"
+        style="background-image: url('/assets/3-images.svg');">
+        <div></div>
+        <div style="text-shadow: 2px 2px 2px black;">No Images Uploaded</div>
+        <div></div>
+      </div>
+
+    </div>
+
+    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+      <form class="card-body" method="POST" action="/upload-product" enctype="multipart/form-data"
+        name="uploadProducts">
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Upload products</span>
+          </label>
+          <input name="productImages" id="upload" type="file"
+            class="file-input file-input-bordered file-input-primary w-full max-w-xs" accept=".jpg ,.jpeg ,.png"
+            placeholder="upload products" required multiple />
+        </div>
+
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Brand</span>
+          </label>
+          <input type="text" name="brand" placeholder="brand name" class="input input-bordered" autocomplete="username"
+            required />
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">product description</span>
+          </label>
+          <textarea class="textarea textarea-bordered" name="description" placeholder="write product description"
+            required></textarea>
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Product Details</span>
+          </label>
+          <textarea name="details" class="textarea textarea-bordered" placeholder="write product details"
+            required></textarea>
+        </div>
+
+        <div class="form-control mt-6">
+          <button class="btn btn-primary">Upload</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('./../../components/toast.ejs') %>
+<script src="/scripts/product-gallery.js"></script>
