@@ -1,20 +1,15 @@
-
 <body>
   <div class="drawer">
     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col justify-stretch items-center min-h-[100dvh]">
       <%- include('./../components/user-navbar.ejs') %>
-      <%- include('./../seller/add-products/index.ejs') %>
+      <%- include('./seller-stats.ejs') %>
     </div>
     <div class="drawer-side">
       <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
       <ul class="menu min-h-full w-80 bg-base-200 p-4 text-base-content">
-        <button class="bg-base-300 btn justify-start items-center hover:scale-[0.9]">
-          <label class="grid items-center aspect-square h-[100%]">
-            <ion-icon src="/assets/settings.svg" class="text-base-content" size="large" style="scale:1"></ion-icon>
-          </label>
-          <div>Settings</div>
-        </button>
+        <%# sidebar cintent %>
+        <%- include('./side-bar.ejs') %>
       </ul>
     </div>
   </div>

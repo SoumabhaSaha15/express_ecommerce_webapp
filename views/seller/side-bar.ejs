@@ -1,0 +1,20 @@
+<button class="bg-base-300 btn justify-start items-center hover:scale-[0.9]">
+  <label class="grid items-center aspect-square h-[100%]">
+    <ion-icon name="settings-sharp" class="text-base-content" size="large" style="scale:1"></ion-icon>
+  </label>
+  <div>settings</div>
+</button>
+
+<% if(isSeller) { %>
+  <button class="bg-base-300 btn justify-start items-center hover:scale-[0.9]" onclick="addProducts()">
+    <label class="grid items-center aspect-square h-[100%]">
+      <ion-icon name="add-circle-sharp" size="large"></ion-icon>
+    </label>
+    <div>add-products</div>
+  </button>
+  <script>
+    const addProducts = () => {
+      if (!location.href.endsWith('/add-products')) location.href += '/add-products';
+    }
+  </script>
+  <%} %>

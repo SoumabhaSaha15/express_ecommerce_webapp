@@ -5,7 +5,8 @@
         <div class="text-center text-base-content lg:text-left">
           <h1 class="text-5xl font-bold">Signup now!</h1>
           <p class="py-6">
-            HappyDeals.com aims to be your go-to destination for online bargains.  We curate a wide selection of products across various categories, all at discounted prices.
+            HappyDeals.com aims to be your go-to destination for online bargains. We curate a wide selection of products
+            across various categories, all at discounted prices.
           </p>
         </div>
         <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -14,15 +15,15 @@
             <div class="tooltip tooltip-primary" data-tip="upload dp/avatar/seller-logo">
               <div class="avatar justify-center">
                 <label class="w-24" for="avatar">
-                  <img src="assets/upload.svg" class="rounded-full aspect-square border-dashed border-2 bg-base-200"
+                  <img src="/assets/upload.svg" class="rounded-full aspect-square border-dashed border-2 bg-base-200"
                     id="avatar-preview" />
                 </label>
               </div>
             </div>
 
             <input name="avatar" id="avatar" type="file"
-              class="file-input file-input-bordered file-input-primary w-full max-w-xs"
-              accept=".jpg ,.jpeg ,.png" required />
+              class="file-input file-input-bordered file-input-primary w-full max-w-xs" accept=".jpg ,.jpeg ,.png"
+              required />
 
             <div class="form-control">
               <label class="label">
@@ -51,11 +52,15 @@
                 <span class="label-text">Show Password</span>
                 <input type="checkbox" id="show-password" class="checkbox checkbox-primary" />
               </label>
-              <label class="label cursor-pointer">
-                <span class="label-text">Seller account</span>                
-                <input type="radio" name="isSeller" class="radio checked:bg-primary"  required/>
-              </label>
             </div>
+
+            <label class="form-control w-full max-w-xs">
+              <select class="select select-bordered" name="isSeller">
+                <option disabled selected>Are you a seller?</option>
+                <option value="on">yes</option>
+                <option value="off">no</option>
+              </select>
+            </label>
 
             <div class="form-control mt-6">
               <button class="btn btn-primary">Signup</button>
@@ -67,6 +72,7 @@
         </div>
       </div>
     </div>
+    <%- include('./../components/toast.ejs') %>
 </body>
 <script>
 
@@ -74,14 +80,23 @@
     const password = document.getElementById('password');
     password.type = (password.type == "text") ? "password" : "text";
   }
-
   document.getElementById('avatar').oninput = (event) => {
     try {
-      if (event.target.files && (event.target.files)[0].size <= (5 * 1024 * 1024)) {
+      if (event.target.files && (event.target.files)[0].size <= (1 * (2 ** 20)))
         document.querySelector('img#avatar-preview').src = URL.createObjectURL(event.target.files[0]);
-      } else window.alert('file is larger than 5 MB');
+      else if ((event.target.files)[0].size > (1 * (2 ** 20))) {
+        document.querySelector('img#avatar-preview').src = "/assets/upload.svg";
+        toast({ type: "error", message: 'file is larger than 1mb.' });
+        document.forms['signup'].reset();
+      } else {
+        document.querySelector('img#avatar-preview').src = "/assets/upload.svg";
+        toast({ type: "error", message: 'file not selected' });
+        document.forms['signup'].reset();
+      }
     } catch (error) {
-      window.alert('file is larger than 5 MB');
+      toast({ type: "error", message: 'file not selected' });
+      document.querySelector('img#avatar-preview').src = "/assets/upload.svg";
+      document.forms['signup'].reset();
     }
   }
 
