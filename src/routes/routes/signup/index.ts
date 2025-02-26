@@ -4,10 +4,10 @@ import upload from "./../../../middleware/multer.js";
 import express from "express";
 const router = express.Router();
 router
-  .use(upload.single('avatar'))
   .route('/signup')
   .get(async (_: express.Request, res: express.Response) => res.render('signup/index'))
   .post(
+    upload.single('avatar'),
     POST.invalidCredentials,
     POST.duplicateCredentialError,
     POST.setCookie

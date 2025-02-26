@@ -2,7 +2,7 @@ import clientImage from "./routes/images/index.js";
 import signup from "./routes/signup/index.js";
 import login from "./routes/login/index.js";
 import test from "./routes/test/index.js";
-import client from "./routes/client/index.js"
+import client from "./routes/client/index.js";
 import express from "express";
 const router = express.Router();
 router
@@ -13,5 +13,5 @@ router
   .use(login)
   .use(test)
   .use(clientImage)
-  .use(client)
+  .use(client);
 export default router;

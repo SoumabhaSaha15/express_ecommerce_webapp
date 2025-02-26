@@ -24,24 +24,23 @@
     </div>
 
     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-      <form class="card-body" method="POST" action="/upload-product" enctype="multipart/form-data"
-        name="uploadProducts">
-
+      <form class="card-body" method="POST" enctype="multipart/form-data"
+        name="uploadProducts" >
+        <!-- <%#= action %> -->
         <div class="form-control">
           <label class="label">
             <span class="label-text">Upload products</span>
           </label>
           <input name="productImages" id="upload" type="file"
             class="file-input file-input-bordered file-input-primary w-full max-w-xs" accept=".jpg ,.jpeg ,.png"
-            placeholder="upload products" required multiple />
+            multiple required />
         </div>
-
 
         <div class="form-control">
           <label class="label">
             <span class="label-text">Brand</span>
           </label>
-          <input type="text" name="brand" placeholder="brand name" class="input input-bordered" autocomplete="username"
+          <input type="text" name="brandName" placeholder="brand name" class="input input-bordered" autocomplete="username"
             required />
         </div>
 
@@ -62,11 +61,15 @@
         </div>
 
         <div class="form-control mt-6">
-          <button class="btn btn-primary">Upload</button>
+          <button class="btn btn-primary" type="submit">Upload</button>
         </div>
       </form>
     </div>
   </div>
 </div>
+<script>
+  FORM = document.forms['uploadProducts'];
+  FORM.action = location.href;
+</script>
 <%- include('./../../components/toast.ejs') %>
 <script src="/scripts/product-gallery.js"></script>

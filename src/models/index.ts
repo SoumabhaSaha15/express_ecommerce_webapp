@@ -1,4 +1,6 @@
 import { Client, ClientType, ClientSchema, ClientModel } from "./Client.js";
-import { Product, ProductDoc, ProductSchema, ProductModel } from "./Product.js";
+import { Product, ProductType, ProductSchema, ProductModel } from "./Product.js";
+import { ProductImages, ProductImagesModel, ProductImageSchema } from "./ProductImages.js";
 export { Client, ClientType, ClientSchema, ClientModel };
-export { Product, ProductDoc, ProductSchema, ProductModel };
+export { Product, ProductType, ProductSchema, ProductModel };
+export { ProductImages, ProductImagesModel, ProductImageSchema };
