@@ -1,5 +1,5 @@
 <template>
-  <img class="object-cover object-center  aspect-square rounded-lg" alt="gallery-photo" />
+  <img class="object-contain bg-base-100 object-center  aspect-square rounded-lg" alt="gallery-photo" />
 </template>
 <style>
   img.product {
@@ -68,8 +68,8 @@
   </div>
 </div>
 <script>
-  FORM = document.forms['uploadProducts'];
-  FORM.action = location.href;
+  // FORM = document.forms['uploadProducts'];
+  // FORM.action = location.href;
 </script>
 <%- include('./../../components/toast.ejs') %>
 <script src="/scripts/product-gallery.js"></script>

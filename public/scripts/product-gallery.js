@@ -29,7 +29,7 @@
             gallary.innerHTML += `
             <div>
             <img 
-            class="product object-cover object-center  max-w-15 max-h-15 h-15 w-15  rounded-lg"
+            class="product object-contain bg-base-300 object-center  max-w-15 max-h-15 h-15 w-15  rounded-lg"
             src="${URL.createObjectURL(imageBuffer)}"
             alt="${imageBuffer.name}"
             />
