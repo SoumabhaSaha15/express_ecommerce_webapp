@@ -1,13 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: winter --default, dark --prefers-dark;
+}
+@plugin "tailwind-scrollbar";
+@plugin "tailwindcss-motion";
 ion-icon[src] {
   scale: 0.8;
 }
 
+img.product {
+  width: 200px;
+  height: 200px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 :root {
-  transition: all linear .5s;
+  transition: all linear 0.5s;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 700;
   font-style: normal;

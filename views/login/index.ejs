@@ -5,7 +5,8 @@
         <div class="text-center text-base-content lg:text-left">
           <h1 class="text-5xl font-bold">Login now!</h1>
           <p class="py-6">
-            HappyDeals.com aims to be your go-to destination for online bargains.  We curate a wide selection of products across various categories, all at discounted prices.
+            HappyDeals.com aims to be your go-to destination for online bargains. We curate a wide selection of products
+            across various categories, all at discounted prices.
           </p>
         </div>
         <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -15,26 +16,40 @@
               <label class="label">
                 <span class="label-text">Email</span>
               </label>
-              <input type="email" autocomplete="email" placeholder="email" name="email" class="input input-bordered" required />
+              <input 
+                type="email" 
+                autocomplete="email" 
+                placeholder="email" 
+                name="email" 
+                class="input input-bordered w-full"
+                required 
+              />
             </div>
 
             <div class="form-control">
               <label class="label">
                 <span class="label-text">Password</span>
               </label>
-              <input type="password" name="password" id="password" name="password" type="password" maxlength="8"
-                minlength="8" placeholder="password" pattern="^[\x21-\x7E]+$" class="input input-bordered"
-                autocomplete="current-password" required />
-              <label class="label cursor-pointer">
+              <input 
+                type="password" 
+                name="password" 
+                id="password" 
+                maxlength="8"
+                placeholder="password" 
+                pattern="^[\x21-\x7E]+$" 
+                class="input input-bordered w-full"
+                autocomplete="current-password" 
+                required 
+              />
+              <label class="label cursor-pointer w-full px-0.5 py-1 justify-between">
                 <span class="label-text">Show Password</span>
                 <input type="checkbox" id="show-password" class="checkbox checkbox-primary" />
               </label>
             </div>
 
-            <div class="form-control mt-6">
-              <button class="btn btn-primary">Login</button>
-            </div>
-            <p class="py-8 font-medium">Don't have an account
+            <button class="btn btn-primary">Login</button>
+
+            <p class="py-4 font-medium">Don't have an account
               <a href="./signup" class="label-text-alt link link-hover">signup</a>
             </p>
           </form>

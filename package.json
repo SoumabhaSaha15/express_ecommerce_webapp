@@ -7,7 +7,7 @@
     "dev": "nodemon dist/index.js",
     "esbuild": "node esbuild",
     "build": "tsc",
-    "build:css": "npx tailwindcss -i ./src/styles/tailwind.css -o ./public/styles/tailwind.css"
+    "build:css": "npx @tailwindcss/cli -i ./src/styles/tailwind.css -o ./public/styles/tailwind.css"
   },
   "repository": {
     "type": "git",
@@ -30,32 +30,33 @@
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "express-ejs-layouts": "^2.5.1",
-    "flowbite": "^3.0.0",
+    "flowbite": "^3.1.2",
     "gradient-string": "^3.0.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.10.1",
+    "mongoose": "^8.12.1",
     "multer": "^1.4.5-lts.1",
     "running-at": "^0.3.22",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.7.3",
+    "typescript": "^5.8.2",
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.12",
     "@types/bcrypt": "^5.0.2",
     "@types/cookie-parser": "^1.4.8",
     "@types/express": "^5.0.0",
     "@types/express-ejs-layouts": "^2.5.4",
     "@types/express-fileupload": "^1.5.1",
-    "@types/jsonwebtoken": "^9.0.7",
-    "@types/mongoose": "^5.11.96",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/mongoose": "^5.11.97",
     "@types/multer": "^1.4.12",
-    "autoprefixer": "^10.4.20",
-    "daisyui": "^4.12.23",
-    "esbuild": "^0.24.2",
+    "autoprefixer": "^10.4.21",
+    "daisyui": "^5.0.0",
+    "esbuild": "^0.25.0",
     "nodemon": "^3.1.9",
     "postcss": "^8.5.3",
-    "tailwind-scrollbar": "^3.1.0",
-    "tailwindcss": "^3.4.17",
-    "tailwindcss-motion": "^1.0.1"
+    "tailwind-scrollbar": "^4.0.1",
+    "tailwindcss": "^4.0.12",
+    "tailwindcss-motion": "^1.1.0"
   }
 }
