@@ -15,27 +15,19 @@
         <ion-icon src="/assets/moon.svg" class="swap-on text-base-content" size="large"></ion-icon>
       </label>
     </button>
-    <div class="dropdown dropdown-end">
+    <div class="dropdown dropdown-end" hx-get="/client/credentials" hx-trigger="load" hx-swap="innerHTML" >
       <button class="btn btn-square btn-ghost">
         <div class="avatar">
           <div class="w-8 rounded-full">
-            <img src="<%= avatar %>" class="rounded-full bg-base-300" alt="avatar" />
+            <img src="/assets/spinner.svg" class="rounded-full bg-base-300" alt="avatar" />
           </div>
         </div>
       </button>
       <ul tabindex="0" class="dropdown-content menu z-[1] w-96 rounded-box bg-base-300 p-2 shadow">
         <li class="card rounded-box w-full max-w-sm shadow-2xl bg-base-100">
           <figure class="px-10 pt-10">
-            <img src="<%= avatar %>" alt="Profile Picture" class="h-24 w-24 rounded-full bg-base-200" />
+            <img src="/assets/spinner.svg" alt="Profile Picture" class="h-24 w-24 rounded-full bg-base-200 animate-spin" />
           </figure>
-          <div class="card-body items-center text-center overflow-hidden text-ellipsis">
-            <h2 class="card-title">
-              <%= name %>
-            </h2>
-            <p>
-              <%= email %>
-            </p>
-          </div>
         </li>
       </ul>
     </div>

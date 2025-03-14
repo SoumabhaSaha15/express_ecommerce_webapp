@@ -2,7 +2,9 @@
 @plugin "daisyui" {
   themes: winter --default, dark --prefers-dark;
 }
-@plugin "tailwind-scrollbar";
+@plugin "tailwind-scrollbar"{
+  scrollbar:rounded
+}
 @plugin "tailwindcss-motion";
 ion-icon[src] {
   scale: 0.8;
