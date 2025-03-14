@@ -8,7 +8,7 @@ export default async (req: express.Request, res: express.Response, next: express
       data[index].images = ((await ProductImagesModel.find({ productId: data[index]._id })).map(v => v.toJSON().image));
     }
     //pending correction
-    res.render('seller/products', {"products": data, isSeller: true });
+    res.render('seller/products', {products: data, isSeller: true });
   } catch (error) {
     next(error);
   }
