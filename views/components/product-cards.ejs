@@ -1,0 +1,28 @@
+<div
+  class="h-[calc(100dvh-4rem)] w-full grid p-2 gap-1 place-items-center auto-rows-[24rem] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  <% products.forEach(value=> { %>
+    <div class="card bg-base-100 p-2 w-full max-h-96 min-h-96 shadow-xl">
+
+      <div class="carousel carousel-center max-w-full space-x-4 rounded-box bg-base-100 p-4 max-h-[50vh]">
+        <% value.images.forEach((link)=> { %>
+          <div class="carousel-item w-full">
+            <img src="<%=link %>" class="rounded-box w-full object-contain object-center bg-base-300 lg:object-cover" />
+          </div>
+          <% }) %>
+      </div>
+
+
+        <div class="card-body">
+          <h2 class="card-title">
+            <%= (value.brandName+' '+value.description) %>
+        </h2>
+        <p class="max-h-10 overflow-hidden text-ellipsis">
+          <%= value.details %>
+        </p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Edit</button>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+</div>
