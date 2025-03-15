@@ -2,6 +2,7 @@ import error_handler from "./error.js";
 import credential from "./routes/credentials/index.js";
 import invalidParam from "./invalidParam.js";
 import addProducts from "./routes/add-products/index.js";
+import viewProduct from "./routes/view-products/index.js";
 import express from "express";
 const router = express.Router();
 router.use(credential);
@@ -10,5 +11,6 @@ router
   .get(invalidParam)
   .post(invalidParam);
 router.use(addProducts);
+router.use(viewProduct)
 router.use(error_handler);
 export default router;

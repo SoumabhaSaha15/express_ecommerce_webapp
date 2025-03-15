@@ -1,19 +1,20 @@
-
-<% products.forEach(value=> { %>
-  <div class="card bg-base-100 w-96 shadow-xl">
-    <figure>
-      <img src="<%=value.images[0] %>" alt="<%= value.brandName %>" />
-    </figure>
-    <div class="card-body">
-      <h2 class="card-title">
-        <%= (value.brandName+' '+value.description) %>
-      </h2>
-      <p>
-        <%= value.details %>
-      </p>
-      <div class="card-actions justify-end">
-        <button class="btn btn-primary">Edit</button>
+<div>
+  <% products.forEach(value=> { %>
+    <div class="card bg-base-100 w-96 shadow-xl">
+      <figure>
+        <img src="<%=value.images[0] %>" alt="<%= value.brandName %>" />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title">
+          <%= (value.brandName+' '+value.description) %>
+        </h2>
+        <p>
+          <%= value.details %>
+        </p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Edit</button>
+        </div>
       </div>
     </div>
-  </div>
-  <% }) %>
+    <% }) %>
+</div>
