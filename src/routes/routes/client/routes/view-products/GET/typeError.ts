@@ -41,7 +41,7 @@ export default async (req: express.Request, res: express.Response, next: express
     ]);
 
     const dataParser = z.array(z.strictObject({
-      _id: z.instanceof(mongoose.Types.ObjectId),
+      _id: z.instanceof(mongoose.Types.ObjectId).transform((v)=>v.toString()),
       images: z.array(z.string().url()).nonempty(),
       brandName: z
         .string({ required_error: 'brand name is required' })
