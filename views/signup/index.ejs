@@ -44,7 +44,7 @@
               minlength="4"
               maxlength="30"
               placeholder="name"
-              class="input input-bordered w-full"
+              class="input input-bordered w-full border-primary"
               autocomplete="username"
               required
             />
@@ -58,7 +58,7 @@
               type="email"
               name="email"
               placeholder="email"
-              class="input input-bordered w-full"
+              class="input input-bordered w-full border-primary"
               autocomplete="email"
               required
             />
@@ -76,18 +76,18 @@
               minlength="8"
               placeholder="password"
               pattern="^[\x21-\x7E]+$"
-              class="input input-bordered w-full"
+              class="input input-bordered w-full border-primary"
               autocomplete="current-password"
               required
             />
             <label class="label cursor-pointer w-full px-0.5 py-1 justify-between">
               <span class="label-text">Show Password</span>
-              <input type="checkbox" id="show-password" class="checkbox checkbox-primary" />
+              <input type="checkbox" id="show-password" class="checkbox checkbox-primary border-primary" />
             </label>
           </div>
 
           <label class="form-control w-full">
-            <select class="select select-bordered w-full" name="isSeller">
+            <select class="select select-bordered w-full select-primary" name="isSeller">
               <option disabled selected>Are you a seller?</option>
               <option value="on">yes</option>
               <option value="off">no</option>

@@ -14,36 +14,65 @@
     </div>
     <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <form class="card-body" method="POST" enctype="multipart/form-data" name="uploadProducts">
+        
         <div class="form-control">
           <label class="label">
             <span class="label-text">Upload products</span>
           </label>
           <input name="productImages" id="upload" type="file" class="file-input file-input-bordered file-input-primary w-full" accept=".jpg ,.jpeg ,.png" multiple required />
         </div>
+        
         <div class="form-control">
           <label class="label">
             <span class="label-text">Brand</span>
           </label>
-          <input type="text" name="brandName" placeholder="brand name" class="input input-bordered w-full" required />
+          <input type="text" name="brandName" pattern="^[\x00-\x7F]+$" placeholder="brand name" class="input input-bordered w-full border-primary" required />
         </div>
+        
         <div class="form-control">
           <label class="label">
             <span class="label-text">Price</span>
           </label>
-          <input type="number" name="price" placeholder="price in INR" class="input input-bordered w-full" required />
+          <input type="number" name="price" placeholder="price in INR" class="input input-bordered w-full border-primary" required />
         </div>
+
         <div class="form-control">
           <label class="label">
-            <span class="label-text">product description</span>
+            <span class="label-text">Quantity</span>
           </label>
-          <textarea class="textarea textarea-bordered w-full" name="description" placeholder="write product description" required></textarea>
+          <input type="number" name="quantity" min="10" value="10" placeholder="provide quantity" class="input input-bordered w-full border-primary" required />
         </div>
+        
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Catagory</legend>
+          <select class="select select-bordered w-full select-primary" name="catagory" required>
+            <option disabled selected>Provide catagory</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Mens-Fashion">Mens-Fashion</option>
+            <option value="Womens-Fashion">Womens-Fashion</option>
+            <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+            <option value="Home & Furniture">Home & Furniture</option>
+            <option value="Grocery & Essentials">Grocery & Essentials</option>
+            <option value="Toys & Baby Products">Toys & Baby Products</option>
+            <option value="Books & Stationery">Books & Stationery</option>
+            <option value="Pet Supplies">Pet Supplies</option>
+          </select>
+        </fieldset>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Product Description</span>
+          </label>
+          <textarea class="textarea textarea-bordered w-full border-primary" name="description" pattern="^[\x00-\x7F]+$" placeholder="write product description" required></textarea>
+        </div>
+        
         <div class="form-control">
           <label class="label">
             <span class="label-text">Product Details</span>
           </label>
-          <textarea name="details" class="textarea textarea-bordered w-full" placeholder="write product details" required></textarea>
+          <textarea name="details" pattern="^[\x00-\x7F]+$" class="textarea textarea-bordered w-full border-primary" placeholder="write product details [provide non nested json]" required></textarea>
         </div>
+        
         <button class="btn btn-primary mt-4" type="submit">Upload</button>
         
       </form>

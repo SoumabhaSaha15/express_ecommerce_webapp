@@ -39,7 +39,7 @@ export const Product = z.strictObject({
       } catch (error) {
         return false;
       }
-    }),
+    },{message:'not a valid json string or any nested object is given!!'}),
   quantity: z.coerce.number({ required_error: 'quantity is required' }).int().positive().min(10),
   sellerId: z.instanceof(mongoose.Types.ObjectId),
   price: z.coerce.number().int().positive().min(50),
